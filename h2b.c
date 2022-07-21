@@ -39,18 +39,18 @@ void h2bEX() {
     while(1) {
 
         result[0]='\0';
-        printf("16Áø¼ö ÀÔ·Â :");
+        printf("16ì§„ìˆ˜ ì…ë ¥ :");
         gets(input);
 
         makebin(input,result,h2b,sizeof(h2b)/sizeof(h2b[0]));
        
         if(result[0]=='x') {break;}
 
-        printf("2Áø¼ö º¯È¯ °ª => %s\n\n",result);
-
+        printf("2ì§„ìˆ˜ ë³€í™˜ ê°’ => %s\n\n",result);
+ 
 
     }
-    printf("    16Áø¼ö ¾Æ´Õ´Ï´Ù. ÇÁ·Î±×·¥ Á¾·á.");
+    printf("    16ì§„ìˆ˜ ì•„ë‹™ë‹ˆë‹¤. í”„ë¡œê·¸ë¨ ì¢…ë£Œ.");
 }
 
 void makebin(char *in, char *rst, hexa2binary *h2b, int size) {
@@ -59,8 +59,8 @@ void makebin(char *in, char *rst, hexa2binary *h2b, int size) {
     char temp[10]; 
 
     while(*(in+i)) {
-        if(toupper(*(in+i))>'F') {  //16Áø¼ö´Â ´ë¹®ÀÚ f¿¡¼­ ³¡³ª´Ï±î fº¸´Ù Å©´Ù¸é ¿À·ù
-            *(rst+0)='x';   //Á¤È®È÷ ±¸ºĞÇÏ·Á¸é ´ë¹®ÀÚ Aº¸´Ù Ä¿¾ßÇÑ´Ù. 0°ú 9 »çÀÌÀÇ ¼ö¿©¾ß ÇÑ´Ù.
+        if(toupper(*(in+i))>'F') {  //16ì§„ìˆ˜ëŠ” ëŒ€ë¬¸ì fì—ì„œ ëë‚˜ë‹ˆê¹Œ fë³´ë‹¤ í¬ë‹¤ë©´ ì˜¤ë¥˜
+            *(rst+0)='x';   //ì •í™•íˆ êµ¬ë¶„í•˜ë ¤ë©´ ëŒ€ë¬¸ì Aë³´ë‹¤ ì»¤ì•¼í•œë‹¤. 0ê³¼ 9 ì‚¬ì´ì˜ ìˆ˜ì—¬ì•¼ í•œë‹¤.
         }
         i++;
     }
@@ -72,7 +72,7 @@ void makebin(char *in, char *rst, hexa2binary *h2b, int size) {
             *(temp+j) = toupper(*(in+i));
             i++;
         }
-        temp[++j]='\0'; //¸¸¾à ¿À·ù »ı±â¸é ¿©±â 1¼øÀ§
+        temp[++j]='\0'; //ë§Œì•½ ì˜¤ë¥˜ ìƒê¸°ë©´ ì—¬ê¸° 1ìˆœìœ„
 
         for(j=0; j<size; j++) {
             if(strcmp((h2b+j)->hexa,temp)==0) {
