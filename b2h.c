@@ -36,7 +36,7 @@ void b2hEX() {
     };
         while(1) {
             result[0]='\0';
-            printf("4ºñÆ®¾¿ÀÇ 2Áø¼ö ÀÔ·Â : ");
+            printf("4ë¹„íŠ¸ì”©ì˜ 2ì§„ìˆ˜ ì…ë ¥ : ");
 
             gets(input);
 
@@ -44,9 +44,9 @@ void b2hEX() {
 
             if(result[0]=='x') {break;}
 
-            printf("16Áø¼ö º¯È¯°ªÀº => 0x%s\n\n",result);
+            printf("16ì§„ìˆ˜ ë³€í™˜ê°’ì€ => 0x%s\n\n",result);
         }
-        printf("Á¾·á");
+        printf("ì¢…ë£Œ");
         return 0;
 }
     
@@ -65,27 +65,27 @@ void makehexa(char *in, char *rst, binary2hexa *b2h, int size) {
         i++;
     }
 
-    if((i%4)!=0) {  //4·Î ¾È³ª´² ¶³¾îÁö¸é ÀÌ·¸°ÔÃ³¸®
+    if((i%4)!=0) {  //4ë¡œ ì•ˆë‚˜ëˆ  ë–¨ì–´ì§€ë©´ ì´ë ‡ê²Œì²˜ë¦¬
         *(rst+0)='x';
         return;
     }
 
     i=0;
-    while(*(in+i)) {  //³ª´² ¶³¾îÁø´Ù¸é ?
+    while(*(in+i)) {  //ë‚˜ëˆ  ë–¨ì–´ì§„ë‹¤ë©´ ?
         for(j=0; j<4; j++) {
-            *(temp+j) = *(in+i); //temp¹è¿­¿¡ °ª º¹»ç
+            *(temp+j) = *(in+i); //tempë°°ì—´ì— ê°’ ë³µì‚¬
             i++;
         }
-        temp[++j]='\0'; //¸¸¾à ¿À·ù »ı±â¸é ¿©±â 1¼øÀ§
-                        //¸¶Áö¸· °ª ³Î·Î Æ÷Àå.
+        temp[++j]='\0'; //ë§Œì•½ ì˜¤ë¥˜ ìƒê¸°ë©´ ì—¬ê¸° 1ìˆœìœ„
+                        //ë§ˆì§€ë§‰ ê°’ ë„ë¡œ í¬ì¥.
 
         for(j=0; j<size; j++) {
-            if(strcmp((b2h+j)->bin,temp)==0) { //strcmp ±¸Á¶Ã¼ ¾ÈÀÇ °ªÀÌ
-                strcat(rst,(b2h+j)->hexa);  //temp¶û °°´Ù¸é ±×¿¡ ¸Â´Â
-            }                               //±¸Á¶Ã¼ ¼Ó 16Áø¼ö°ªÀ» rst·Î º¹ºÙÇØÁØ´Ù
+            if(strcmp((b2h+j)->bin,temp)==0) { //strcmp êµ¬ì¡°ì²´ ì•ˆì˜ ê°’ì´
+                strcat(rst,(b2h+j)->hexa);  //tempë‘ ê°™ë‹¤ë©´ ê·¸ì— ë§ëŠ”
+            }                               //êµ¬ì¡°ì²´ ì† 16ì§„ìˆ˜ê°’ì„ rstë¡œ ë³µë¶™í•´ì¤€ë‹¤
         }
     }
-}
+} 
 
 
 int main(int argc,char *argv[]) {
